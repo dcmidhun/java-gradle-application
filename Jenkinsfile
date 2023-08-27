@@ -13,7 +13,7 @@ pipeline{
                 script{
                     withSonarQubeEnv(credentialsId: 'sonar-token') {
                         sh "chmod +x gradlew"
-                        sh "./gradlew --warning-mode all sonarqube"
+                        sh "./gradlew --warning-mode all --stacktrace sonarqube"
                     }
                 }
             }
