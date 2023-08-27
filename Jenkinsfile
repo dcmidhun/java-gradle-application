@@ -13,8 +13,8 @@ pipeline{
                 script{
                     withSonarQubeEnv(credentialsId: 'sonar-token') {
                         sh 'java --version'
-                        sh "chmod +x /var/lib/jenkins/workspace/java-gradle-application/gradlew"
-                        sh "/var/lib/jenkins/workspace/java-gradle-application/gradlew --warning-mode fail --stacktrace sonarqube"
+                        sh "sudo chmod +x /var/lib/jenkins/workspace/java-gradle-application/gradlew"
+                        sh "sudo /var/lib/jenkins/workspace/java-gradle-application/gradlew --warning-mode fail --stacktrace sonarqube"
                     }
                 }
             }
