@@ -14,7 +14,7 @@ pipeline{
                     withSonarQubeEnv(credentialsId: 'sonar-token') {
                         sh 'java --version'
                         sh "chmod +x gradlew"
-                        sh "./gradlew --warning-mode fail --stacktrace --debug clean build sonarqube"
+                        sh "./gradlew --scan --debug clean build sonarqube"
                     }
                 }
             }
